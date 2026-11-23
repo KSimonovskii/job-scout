@@ -7,7 +7,8 @@ import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public record JobDto(
-        String jobId,
+        @JsonProperty("jobId")
+        String id,
         @JsonProperty("jobTitle")
         String title,
         String companyName,
