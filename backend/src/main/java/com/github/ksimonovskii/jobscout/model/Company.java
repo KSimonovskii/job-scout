@@ -10,13 +10,15 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Setter
 @ToString
 @NoArgsConstructor
-@AllArgsConstructor
-@Builder
 public class Company {
     @Id
     private String id;
     @Indexed(unique = true)
     private String name;
-    @Builder.Default
-    private boolean inBlackList = false;
+    private boolean inBlackList;
+
+    public Company(String name) {
+        this.name = name;
+        this.inBlackList = false;
+    }
 }

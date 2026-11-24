@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 public interface JobService {
-    public List<JobDto> readJobsFromScrapper();
+    public List<Job> importJobsFromScrapper();
     void save(Job job);
-    void save(List<Job> jobs);
+    List<Job> save(List<Job> jobs);
 
 }

@@ -1,6 +1,7 @@
 package com.github.ksimonovskii.jobscout.controller;
 
 import com.github.ksimonovskii.jobscout.dto.JobDto;
+import com.github.ksimonovskii.jobscout.model.Job;
 import com.github.ksimonovskii.jobscout.service.JobService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,8 +19,8 @@ public class JobController {
     final JobService jobService;
 
     @GetMapping("/read")
-    public List<JobDto> readJobs() {
-        return jobService.readJobsFromScrapper();
+    public List<Job> readJobs() {
+        return jobService.importJobsFromScrapper();
     }
 
 }

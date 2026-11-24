@@ -1,5 +1,7 @@
 package com.github.ksimonovskii.jobscout.model;
 
+import com.github.ksimonovskii.jobscout.dto.JobDto;
+import com.github.ksimonovskii.jobscout.repository.CompanyRepository;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -13,7 +15,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
+@Builder(toBuilder = true)
 public class Job {
     @Id
     private String id;
@@ -42,4 +44,5 @@ public class Job {
                 ", company: " +
                 this.company;
     }
+
 }
